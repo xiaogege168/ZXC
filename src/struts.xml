@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- <constant name="struts.action.extension" value="*" /> -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="shop" namespace="/shop" extends="struts-default">
+		<action name="*" class="com.limao.action.ShopAction" method="{1}">
+			<result name="success">/shop/shopList.jsp</result>
+			<result name="findAllSuccess">/shop/shopList.jsp</result>
+
+		</action>
+	</package>
+	<package name="goods" namespace="/goods" extends="struts-default">
+		<action name="*" class="com.limao.action.SkRepositoryAction" method="{1}">
+			<result name="success">/goods/goodsList.jsp</result>
+			<result name="findAllSuccess">/goods/goodsList.jsp</result>
+
+		</action>
+	</package>
+	<package name="records" namespace="/records" extends="struts-default">
+		<action name="*" class="com.limao.action.SkRecordsAction" method="{1}">
+		
+			<result name="findAll">/records/recordsList.jsp</result>
+			
+			<result type="redirectAction" name="success">
+				<param name="actionName">findAll</param>
+				<param name="namespace">/records</param>
+			</result>
+		</action>
+	</package>
+
+
+	<package name="stu" namespace="/stu" extends="struts-default">
+		<action name="*" class="com.limao.action.StudentAction" method="{1}">
+			<result name="findAll">/stu/stuList.jsp</result>
+			<result type="redirectAction" name="success">
+				<param name="actionName">findByStu</param>
+				<param name="namespace">/order</param>
+			</result>
+			<result name="toadd">/stu/toadd.jsp</result>
+			<result name="input">/stu/login.jsp</result>
+		</action>
+	</package>
+
+
+	<package name="user" namespace="/user" extends="struts-default">
+		<action name="*" class="com.limao.action.UserAction" method="{1}">
+			<result type="redirectAction" name="FF">
+				<param name="actionName">findAll</param>
+				<param name="namespace">/user</param>
+			</result>
+			<result name="findAll">/user/userList.jsp</result>
+			<result name="findById">/user/toedit.jsp</result>
+		</action>
+	</package>
+
+
+	<package name="course" namespace="/course" extends="struts-default">
+		<action name="*" class="com.limao.action.CourseAction" method="{1}">
+			<result name="findAllSuccess">/course/courseList.jsp</result>
+		</action>
+	</package>
+
+	<package name="order" namespace="/order" extends="struts-default">
+		<action name="*" class="com.limao.action.OrderAction" method="{1}">
+			<result name="findAllSuccess">/order/orderList.jsp</result>
+			<result name="success">/order/showOrderList.jsp</result>
+		</action>
+	</package>
+
+</struts>    

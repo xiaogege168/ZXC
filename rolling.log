@@ -1,0 +1,2 @@
+[framework] 2019-08-26 16:12:44,453 - org.hibernate.engine.jdbc.spi.SqlExceptionHelper -22182 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'skstudent0_.order' in 'field list'
+[framework] 2019-09-13 12:54:04,040 - org.hibernate.engine.jdbc.spi.SqlExceptionHelper -9155 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Unknown column 'skrecords1_.repositoryId' in 'field list'
